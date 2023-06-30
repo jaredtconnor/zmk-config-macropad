@@ -13,6 +13,11 @@
     status = "okay";
 };
 
+# define DEFAULT  0  
+# define MACRO    1 
+
+# define NONE     0
+
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
@@ -24,14 +29,27 @@
 
         default_layer {
             bindings = <
-                                &kp KP_NUMLOCK  &kp KP_ASTERISK &kp KP_MINUS
+                                &tog MACRO &kp KP_ASTERISK &kp KP_MINUS
                 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 &kp KP_PLUS
                 &kp KP_NUMBER_4 &kp KP_NUMBER_5 &kp KP_NUMBER_6 &none
                 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &lt 1 KP_ENTER
-                &none           &kp KP_NUMBER_0 &kp KP_DOT      &none
+                &kp KP_CLEAR &kp KP_NUMBER_0 &kp KP_DOT      &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+        };
+
+        default_layer {
+            bindings = <
+                                &tog MACRO &kp F23 &kp F24
+                &kp F19 &kp F20 &kp F21 &kp F22
+                &kp F16 &kp F17 &kp F18 &none
+                &kp F12 &kp F13 &kp F14 &kp F15
+                &kp F9 &kp F10 &kp F11 &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
          func_layer {
@@ -43,7 +61,7 @@
                 &kp C_MUTE      &none           &none           &none
              >;
 
-             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
          };
     };
 };
