@@ -40,7 +40,7 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
-        default_layer {
+        function_layer {
             bindings = <
                                 &tog MACRO &kp F23 &kp F24
                 &kp F19 &kp F20 &kp F21 &kp F22
@@ -52,7 +52,7 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
-         func_layer {
+         bt_layer {
              bindings = <
                                 &none           &sys_reset          &bootloader
                 &out OUT_TOG    &out OUT_USB    &out OUT_BLE    &none
